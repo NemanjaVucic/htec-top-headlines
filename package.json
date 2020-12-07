@@ -25,6 +25,10 @@
     "webpack-dev-server": "^2.11.5"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^6.0.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^6.15.0",
