@@ -1,0 +1,89 @@
+{
+  "extends": ["prettier","plugin:react/recommended"],
+  "plugins": ["prettier"],
+  "globals": {
+    "expect": true,
+    "chai": true,
+    "driver": true,
+    "sinonSandbox": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "rules": {
+    //for now prop-types are disabled
+    "react/prop-types": 0,
+    "no-param-reassign": [2, { "props": false }],
+    "func-names": 0,
+    "no-console": 2,
+    "no-dupe-keys": 2,
+    "no-unexpected-multiline": 2,
+    "new-cap": 0,
+    "prefer-template": 0,
+    "arrow-body-style": 0,
+    "no-empty-label": 0,
+    "no-labels": 2,
+    "no-unused-vars": [2, { "args": "after-used" }],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all"
+      }
+    ],
+
+    "curly": [2, "multi-line"],
+    "dot-notation": 2,
+    "eqeqeq": 2,
+    "no-caller": 2,
+    "no-case-declarations": 2,
+    "no-eval": 2,
+    "no-empty": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-fallthrough": 0,
+    "no-floating-decimal": 2,
+    "no-implicit-coercion": 2,
+    "no-implied-eval": 2,
+    "no-multi-spaces": 2,
+    "no-native-reassign": 2,
+    "no-unused-expressions": [
+      2,
+      { "allowShortCircuit": true, "allowTernary": true }
+    ],
+    "no-with": 2,
+
+    "strict": [2, "global"],
+
+    "no-delete-var": 2,
+    "no-shadow-restricted-names": 2,
+    "no-shadow": 2,
+    "no-undef-init": 2,
+    "no-use-before-define": [2, "nofunc"],
+
+    "no-continue": 2,
+    "no-lonely-if": 2,
+    "no-underscore-dangle": 0,
+    "one-var": [2, "never"],
+    "quote-props": [2, "as-needed"],
+
+    "constructor-super": 2,
+    "no-class-assign": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "object-shorthand": [2, "always"],
+    "prefer-const": 2,
+    "prefer-spread": 2,
+    "no-var": 2
+  }
+}
