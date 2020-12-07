@@ -1,0 +1,23 @@
+{
+  "name": "htec",
+  "version": "1.0.0",
+  "description": "Top Headlines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NemanjaVucic/htec-top-headlines.git"
+  },
+  "author": "Nemanja Vucic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NemanjaVucic/htec-top-headlines/issues"
+  },
+  "homepage": "https://github.com/NemanjaVucic/htec-top-headlines#readme",
+  "dependencies": {
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.11.5"
+  }
+}
