@@ -1,7 +1,10 @@
-import React from 'react';
 
-const App = () => {
-  return <h1>Top Headlines</h1>;
-};
+function App() {
+  return (
+    <div >
+      <h1>Top Headlines</h1>
+    </div>
+  );
+}
 
 export default App;
