@@ -1,10 +1,9 @@
-
-function App() {
+const App = () => {
   return (
-    <div >
+    <div>
       <h1>Top Headlines</h1>
     </div>
   );
-}
+};
 
 export default App;
