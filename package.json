@@ -1,51 +1,38 @@
 {
   "name": "htec",
-  "version": "1.0.0",
-  "description": "Top Headlines",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "build": "rimraf dist && webpack --config webpack.prod.config.js --progress --profile --color"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NemanjaVucic/htec-top-headlines.git"
-  },
-  "author": "Nemanja Vucic",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NemanjaVucic/htec-top-headlines/issues"
-  },
-  "homepage": "https://github.com/NemanjaVucic/htec-top-headlines#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "5.1.2",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.11.5"
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
   },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^4.2.2",
-    "eslint": "^6.0.0",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "postcss-loader": "^4.0.1",
-    "prettier": "2.2.0",
-    "rimraf": "^2.7.0",
-    "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
