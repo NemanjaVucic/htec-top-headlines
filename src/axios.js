@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_KEY = '3f0c01386cbb462286d052d9dbfcca47';
+import { API_KEY } from './shared/constants/api';
 
 const instance = axios.create({
-  baseURL: 'https://newsapi.org/v2/top-headlines/',
+  baseURL: 'https://localhost:3000/',
   headers: { 'X-Api-Key': API_KEY },
 });
 
