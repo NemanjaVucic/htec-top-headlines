@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
-import axios from './axios';
+import { withRouter } from 'react-router-dom';
 
-const App = () => {
-  const [response, setResponse] = useState([]);
-  useEffect(async () => {
-    const res = await axios.get('?country=us');
-    setResponse(res.data);
-  }, []);
+import classes from './app.module.scss';
+import Layout from './components/layout';
+import routes from './routes';
+import { renderRoutes } from './shared/helpers/routes';
 
-  console.log(response);
-  return (
-    <div>
-      <h1 className="text-6xl">Top Headlines</h1>
-    </div>
-  );
-};
+const App = (props) => (
+  <div className={classes.app}>
+    <Layout pathname={props.location.pathname}>{renderRoutes(routes)}</Layout>
+  </div>
+);
 
-export default App;
+export default withRouter(App);
