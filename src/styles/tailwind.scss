@@ -1,3 +1,18 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+
+@layer components {
+    .navlink {
+        @apply sm:p-4 py-3 px-0 block border-b-2 border-transparent;
+    }
+
+    .navlink:hover {
+       @apply border-gray-500;
+    }
+
+    .navlink:active {
+        @apply bg-green-400 font-medium text-white;
+     }
+}
+
 @import "tailwindcss/utilities";
