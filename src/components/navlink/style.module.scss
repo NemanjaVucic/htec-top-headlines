@@ -1,0 +1,7 @@
+@import '../../shared/scss/colors.scss';
+
+.selected{
+    background-color: $green-selected;
+    color:$white;
+    font-weight: 500;
+}

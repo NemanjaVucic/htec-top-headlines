@@ -1,25 +1,39 @@
 @import '../../shared/scss/colors.scss';
+@import '../../shared/scss/breakpoints.scss';
 
 .layout{
     width: 90%;
     height: 90%;
     position: fixed;
-    top:7.5%;
+    top:5%;
     left:5%;
     background-image: linear-gradient(280deg, $layout-light, $white);
     box-shadow: -7px 2px 14px -6px rgba(0,0,0,0.75);
+}
 
-    &.categories{
-        height: 95%;
-        top: 2.5%;
+@media(min-width:$sm){
+    .layout{
+        width: 90%;
+        height: 90%;
+        position: fixed;
+        top:7.5%;
+        left:5%;
+        background-image: linear-gradient(280deg, $layout-light, $white);
+        box-shadow: -7px 2px 14px -6px rgba(0,0,0,0.75);
+    
+        &.categories{
+            height: 95%;
+            top: 2.5%;
+        }
+    
+        &.search{
+            height: 80%;
+            top:10%;
+            width:80%;
+            left:10%;
+        }
     }
-
-    &.search{
-        height: 80%;
-        top:10%;
-        width:80%;
-        left:10%;
-    }
+    
 }
 
 
