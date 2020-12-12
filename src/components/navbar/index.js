@@ -1,48 +1,46 @@
-import { useState } from 'react';
 import clsx from 'clsx';
+import { connect } from 'react-redux';
 
 import MenuIcon from './Menu';
 import Navlink from '../navlink';
 import PATHS from '../../shared/constants/paths';
 import LANGUAGES from '../../shared/constants/languages';
+import * as actionsNavbar from '../../redux/navbar/actions';
 
 const headerClasses =
-  'bg-white flex flex-wrap items-center lg:py-3 md:py-2 py-1 lg:px-3 md:px-2 px-1 border-gray-300 border-b';
+  'bg-white flex flex-wrap items-center lg:py-3 md:py-2 py-1 lg:px-3 md:px-2 px-1 border-gray-300 border-b rounded-t-md';
 const commonNavClasses =
   'sm:flex sm:items-center sm:w-auto sm:px-2 px-3 w-full text-center';
 
-const Navbar = () => {
-  const [isSideNavVisible, setIsSideNavVisible] = useState(false);
-  const [language, setLanguage] = useState(LANGUAGES.GB);
-
+const Navbar = ({
+  isSideNavVisible,
+  onToggleMenu,
+  onSetLanguage,
+  language,
+}) => {
   const toggleNavLanguage = clsx([
     !isSideNavVisible && 'hidden',
     commonNavClasses,
     'mt-1',
   ]);
 
-  const toggleNavPages = clsx([
-    !isSideNavVisible && 'hidden',
-    commonNavClasses,
-  ]);
-
   const handleOnToggle = () => {
-    setIsSideNavVisible(!isSideNavVisible);
+    onToggleMenu(isSideNavVisible);
   };
 
   const handleLanguageChanged = (lang) => {
     if (Object.values(LANGUAGES).includes(lang)) {
-      setLanguage(lang);
+      onSetLanguage(lang);
     }
   };
 
   return (
     <header className={headerClasses}>
-      <div className="sm:flex-1 flex-auto justify-between items-center  text-gray-700 sm:pt-0">
+      <div className="sm:flex-1 flex-auto justify-between items-center text-gray-700 sm:pt-0 rounded">
         <nav>
           <MenuIcon onToggle={handleOnToggle} />
           <ul>
-            <div className={toggleNavPages}>
+            <div className={toggleNavLanguage}>
               <Navlink exact={true} path={PATHS.topNews}>
                 Top News
               </Navlink>
@@ -83,4 +81,20 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = ({ navbar }) => {
+  return {
+    isSideNavVisible: navbar.isNavVisible,
+    language: navbar.language,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onToggleMenu: (isNavVisible) =>
+      dispatch(actionsNavbar.toggleMenu(isNavVisible)),
+    onSetLanguage: (newLanguage) =>
+      dispatch(actionsNavbar.setLanguage(newLanguage)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
