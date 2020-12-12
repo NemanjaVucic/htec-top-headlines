@@ -1,12 +1,24 @@
-$gray-light:#F8F8F8;
+$gray-100:#F8F8F8;
+$gray-500:rgb(107, 114, 128);
+$gray-900: rgb(17, 24, 39);
 
-$blue-light:#e6ffff;
+$blue-100:#e6ffff;
+$blue-500:rgb(59, 130, 246);
 
 $green-300:rgb(110, 231, 183);
+$green-500: rgb(16, 185, 129);
+
+$red-500:rgb(239, 68, 68);
 
 $white:#ffffff;
 
 
-$app-light:$gray-light;
-$layout-light:$blue-light;
+$app-light:$gray-100;
+
+$layout-light:$blue-100;
+$blue-info:$blue-500;
+
 $green-selected:$green-300;
+$green-success:$green-500;
+
+$red-danger:$red-500;
