@@ -1,22 +1,29 @@
 import clsx from 'clsx';
+import { connect } from 'react-redux';
 
 import Navbar from '../navbar';
 import classes from './style.module.scss';
-import PATHS from '../../shared/constants/paths';
 
-const Layout = ({ pathname, children }) => {
+const Layout = ({ isSideNavVisible, children }) => {
   const layoutClasses = clsx([
     classes.layout,
-    PATHS.categories === pathname && classes.categories,
-    PATHS.search === pathname && classes.search,
+    isSideNavVisible && classes['small-nav-opened'],
   ]);
 
   return (
-    <div className={layoutClasses}>
-      <Navbar />
-      {children}
+    <div className={classes.container}>
+      <div className={layoutClasses}>
+        <Navbar />
+        {children}
+      </div>
     </div>
   );
 };
 
-export default Layout;
+const mapStateToProps = ({ navbar }) => {
+  return {
+    isSideNavVisible: navbar.isNavVisible,
+  };
+};
+
+export default connect(mapStateToProps)(Layout);
