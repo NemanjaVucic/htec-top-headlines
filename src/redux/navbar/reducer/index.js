@@ -1,5 +1,5 @@
 import { TOGGLE_MENU, SET_LANGUAGE } from '../constants';
-import LANGUAGES from '../../../shared/constants/languages';
+import { LANGUAGES } from '../../../shared/constants/countries-languages';
 
 const initialState = {
   isNavVisible: false,
