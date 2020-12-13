@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import classes from './style.module.scss';
 import Button from '../button';
 
-const Card = ({ news }) => {
-  const { title, description, urlToImage } = news;
+const Card = ({ item }) => {
+  const { title, description, urlToImage } = item;
 
   return (
     <div className={clsx(classes.container, 'bg-gray-200 rounded-2xl mt-5')}>
@@ -24,7 +24,7 @@ const Card = ({ news }) => {
         />
       ) : (
         <div className="text-center">
-          <strong>Ups!:(</strong> <i className="ml-4">Image link collapse!</i>
+          <strong>Oops!:(</strong> <i className="ml-4">Image link collapse!</i>
         </div>
       )}
 
