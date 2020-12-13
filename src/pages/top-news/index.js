@@ -6,7 +6,7 @@ import { API_BASE_URL } from '../../shared/constants/api';
 import TopNewsTemplate from '../../shared/container/top-news-template';
 import { selectedCountry } from '../../shared/helpers/';
 
-const TopNews = ({ language }) => {
+const TopNews = ({ language, ...rest }) => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,6 +28,7 @@ const TopNews = ({ language }) => {
       headerText={`Top news from ${selectedCountry(language)}:`}
       isLoading={isLoading}
       items={news}
+      {...rest}
     />
   );
 };
