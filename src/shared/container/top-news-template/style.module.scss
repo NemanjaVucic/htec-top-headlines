@@ -1,7 +1,7 @@
 @import '../../../shared/scss/breakpoints.scss';
 @import '../../../shared/scss/colors.scss';
 
-.page-tamplate{
+.template-container{
     height: 89%;
     width: 100%;
     padding: 2% 10% 3%;
@@ -40,7 +40,7 @@
 }
 
 @media(max-width:$sm){
-    .page-tamplate{
+    .template-container{
         height: 92%;
         width: 100%;
         overflow-y: auto;
@@ -57,13 +57,13 @@
 }
 
 @media (max-height:960px){
-    .page-tamplate{
+    .template-container{
         height: 89%;
     }
 }
 
 @media (max-height:768px){
-    .page-tamplate{
+    .template-container{
         height: 86%;
     }
 }
