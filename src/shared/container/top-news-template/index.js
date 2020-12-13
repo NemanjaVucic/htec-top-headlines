@@ -5,6 +5,8 @@ import classes from './style.module.scss';
 import Card from '../../components/card';
 import ErrorNoRecords from '../../components/error-no-records';
 import Spinner from '../../components/spinner';
+import SearchField from '../../components/search-field';
+import PATHS from '../../constants/paths';
 
 const renderTopNews = (isLoading, items) => {
   if (isLoading) {
@@ -31,9 +33,12 @@ const TopNewsTemplate = ({
   isLoading,
   items,
   isSideNavVisible,
+  match,
+  term = '',
+  handleSearchTerm = () => {},
 }) => {
   const cssPageTemplate = clsx(
-    classes['page-tamplate'],
+    classes['template-container'],
     isSideNavVisible && classes['small-nav-opened'],
   );
 
@@ -45,6 +50,10 @@ const TopNewsTemplate = ({
           {headerText}
         </h1>
       </div>
+      {match.path === PATHS.search && (
+        <SearchField term={term} handleSearchTerm={handleSearchTerm} />
+      )}
+
       <div className={classes['cards-wrapper']}>
         <div className={classes['card-container']}>
           {renderTopNews(isLoading, items)}
