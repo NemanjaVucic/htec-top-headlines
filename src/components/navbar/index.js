@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import MenuIcon from './Menu';
 import Navlink from '../navlink';
 import PATHS from '../../shared/constants/paths';
-import LANGUAGES from '../../shared/constants/languages';
+import { LANGUAGES } from '../../shared/constants/countries-languages';
 import * as actionsNavbar from '../../redux/navbar/actions';
 
 const headerClasses =
