@@ -1,11 +1,21 @@
 import clsx from 'clsx';
+import qs from 'query-string';
 
 import classes from './style.module.scss';
 import Button from '../button';
+import PATHS from '../../constants/paths';
 
-const Card = ({ item }) => {
+const Card = ({ item, history }) => {
   const { title, description, urlToImage } = item;
 
+  const goToArticle = () => {
+    const q = qs.stringify(item);
+
+    history.push({
+      pathname: PATHS.article,
+      search: q,
+    });
+  };
   return (
     <div className={clsx(classes.container, 'bg-gray-200 rounded-2xl mt-5')}>
       <div
@@ -36,7 +46,9 @@ const Card = ({ item }) => {
       >
         {description}
       </div>
-      <Button type="info">More</Button>
+      <Button type="info" clicked={goToArticle}>
+        More
+      </Button>
     </div>
   );
 };
