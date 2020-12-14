@@ -1,0 +1,53 @@
+@import '../../../shared/scss/breakpoints.scss';
+
+.container{
+    height: 92%;
+    width: 100%;
+    padding: 2% 10% 3%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    &.small-nav-opened{
+        height: 50%;
+        overflow-y: auto;
+    }
+}
+
+@media(min-width:$sm){
+    .container{
+        height: 87%;    
+    } 
+}
+
+@media(min-width:$md){
+    .container{
+        height: 86%;    
+    } 
+}
+
+@media(min-width:$lg){
+    .container{
+        height: 85%;    
+    } 
+}
+
+@media(min-width:$xl){
+    .container{
+        height: 84%;    
+    } 
+}
+
+
+@media(min-height:768px){
+    .container{
+        height: 93%;  
+        
+        &.small-nav-opened{
+            height: 62%;
+        }
+    }
+}
+
+
+
