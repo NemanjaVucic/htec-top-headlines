@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import { connect } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 
 import MenuIcon from './Menu';
 import Navlink from '../navlink';
@@ -17,6 +19,7 @@ const Navbar = ({
   onToggleMenu,
   onSetLanguage,
   language,
+  onSetMenuToFalse,
 }) => {
   const toggleNavLanguage = clsx([
     !isSideNavVisible && 'hidden',
@@ -34,6 +37,13 @@ const Navbar = ({
     }
   };
 
+  const isMenuDisplayed = useMediaQuery({ minWidth: 640 });
+  useEffect(() => {
+    if (isMenuDisplayed) {
+      onSetMenuToFalse();
+    }
+  }, [isMenuDisplayed]);
+
   return (
     <header className={headerClasses}>
       <div className="sm:flex-1 flex-auto justify-between items-center text-gray-700 sm:pt-0 rounded">
@@ -41,9 +51,7 @@ const Navbar = ({
           <MenuIcon onToggle={handleOnToggle} />
           <ul>
             <div className={toggleNavLanguage}>
-              <Navlink exact={true} path={PATHS.topNews}>
-                Top News
-              </Navlink>
+              <Navlink path={PATHS.topNews}>Top News</Navlink>
               <Navlink path={PATHS.categories}>Categories</Navlink>
               <Navlink path={PATHS.search}>Search</Navlink>
             </div>
@@ -60,6 +68,7 @@ const Navbar = ({
           <ul className="sm:flex items-center justify-between text-gray-700 sm:pt-0">
             <Navlink
               path="#"
+              disabled={true}
               activeLanguage={language}
               language={LANGUAGES.GB}
               onLanguageChanged={handleLanguageChanged}
@@ -68,6 +77,7 @@ const Navbar = ({
             </Navlink>
             <Navlink
               path="#"
+              disabled={true}
               activeLanguage={language}
               language={LANGUAGES.US}
               onLanguageChanged={handleLanguageChanged}
@@ -94,6 +104,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionsNavbar.toggleMenu(isNavVisible)),
     onSetLanguage: (newLanguage) =>
       dispatch(actionsNavbar.setLanguage(newLanguage)),
+    onSetMenuToFalse: () => dispatch(actionsNavbar.setMenuToFalse()),
   };
 };
 

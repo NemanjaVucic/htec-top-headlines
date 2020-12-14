@@ -1,5 +1,6 @@
 const PATHS = Object.freeze({
-  topNews: '/',
+  topNews: '/top-news',
+  article: '/top-news/article',
   categories: '/categories',
   search: '/search',
 });

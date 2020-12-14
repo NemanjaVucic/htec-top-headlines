@@ -1,15 +1,16 @@
 import clsx from 'clsx';
 import { NavLink, withRouter } from 'react-router-dom';
+import PATHS from '../../shared/constants/paths';
 
 import classes from './style.module.scss';
 
 const Navlink = ({
-  exact = false,
   path,
   children,
   location,
   activeLanguage,
   language,
+  disabled = false,
   onLanguageChanged = () => {},
 }) => {
   const isSelected = (linkPath) => {
@@ -21,12 +22,23 @@ const Navlink = ({
 
   const classSelected = clsx([isSelected(path) && classes.selected]);
 
+  const cssNavLink = clsx([
+    'navlink mx-2',
+    location.pathname === PATHS.article && disabled && classes.disabled,
+  ]);
+
   return (
-    <li>
+    <li
+      className={
+        (location.pathname === PATHS.article &&
+          disabled &&
+          'cursor-not-allowed') ||
+        ''
+      }
+    >
       <NavLink
-        exact={exact}
         to={path}
-        className="navlink mx-2"
+        className={cssNavLink}
         activeClassName={classSelected}
         onClick={() => onLanguageChanged(language)}
       >
