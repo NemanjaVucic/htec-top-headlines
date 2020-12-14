@@ -1,4 +1,8 @@
-import { TOGGLE_MENU, SET_LANGUAGE } from '../constants';
+import {
+  TOGGLE_MENU,
+  SET_LANGUAGE,
+  SET_MENU_OPEN_TO_FALSE,
+} from '../constants';
 import { LANGUAGES } from '../../../shared/constants/countries-languages';
 
 const initialState = {
@@ -17,6 +21,11 @@ const navbarReducer = (state = initialState, action) => {
       return {
         ...state,
         language: action.language,
+      };
+    case SET_MENU_OPEN_TO_FALSE:
+      return {
+        ...state,
+        isNavVisible: false,
       };
     default:
       return state;
