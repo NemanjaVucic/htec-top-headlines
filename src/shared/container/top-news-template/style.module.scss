@@ -2,10 +2,17 @@
 @import '../../../shared/scss/colors.scss';
 
 .template-container{
-    height: 89%;
+    height: 92%;
     width: 100%;
     padding: 2% 10% 3%;
-    overflow: auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    &.small-nav-opened{
+        height: 62%;
+        overflow-y: auto;
+    }
 }
 
 .cards-wrapper{
@@ -18,52 +25,54 @@
 
 .card-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns:1fr;
     gap: 5px 20px;    
 }
 
-.bullet{
-    color:$gray-500;
-    font-size: 30px; 
+@media(min-width:$sm){
+    .template-container{
+        height: 87%; 
+    } 
 }
 
-@media(max-width:$xl){
+@media(min-width:$md){
+    .template-container{
+        height: 86%;    
+    } 
     .card-container{
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media(max-width:$md){
+@media(min-width:$lg){
+    .template-container{
+        height: 85%;    
+    } 
     .card-container{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media(max-width:$sm){
+@media(min-width:$xl){
     .template-container{
-        height: 92%;
-        width: 100%;
-        overflow-y: auto;
-    
-        display: flex;
-        flex-direction: column;
-    
+        height: 84%;    
+    } 
+    .card-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-height:768px) and (min-width:$sm){
+    .template-container{
+        height: 93%;  
+        max-height: 760px;
+        
         &.small-nav-opened{
-            height: 53%;
-            // overflow: auto;
+            height: 62%;
         }
     }
-    
 }
 
-@media (max-height:960px){
-    .template-container{
-        height: 89%;
-    }
-}
 
-@media (max-height:768px){
-    .template-container{
-        height: 86%;
-    }
-}
+
+
