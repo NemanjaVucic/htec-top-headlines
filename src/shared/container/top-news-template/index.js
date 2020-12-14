@@ -8,7 +8,7 @@ import Spinner from '../../components/spinner';
 import SearchField from '../../components/search-field';
 import PATHS from '../../constants/paths';
 
-const renderTopNews = (isLoading, items) => {
+const renderTopNews = (isLoading, items, history) => {
   if (isLoading) {
     return <Spinner />;
   } else if (!isLoading && items?.length === 0) {
@@ -22,6 +22,7 @@ const renderTopNews = (isLoading, items) => {
         <Card
           key={item.source.name + item.publishedAt + item.author}
           item={item}
+          history={history}
         />
       ))
     );
@@ -34,6 +35,7 @@ const TopNewsTemplate = ({
   items,
   isSideNavVisible,
   match,
+  history,
   term = '',
   handleSearchTerm = () => {},
 }) => {
@@ -44,11 +46,11 @@ const TopNewsTemplate = ({
 
   return (
     <main className={cssPageTemplate}>
-      <div>
-        <span className={classes.bullet}>&#8226;</span>
-        <h1 className="font-medium text-2xl inline-block ml-2 text-gray-600">
-          {headerText}
-        </h1>
+      <div className="block font-bold text-xl md:font-semibold lg:font-bold sm:text-lg md:text-md lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600">
+        <span className="hidden text-center md:text-left sm:inline-block">
+          &#8226;
+        </span>
+        <h1 className="inline-block ml-2 text-center">{headerText}</h1>
       </div>
       {match.path === PATHS.search && (
         <SearchField term={term} handleSearchTerm={handleSearchTerm} />
@@ -56,7 +58,7 @@ const TopNewsTemplate = ({
 
       <div className={classes['cards-wrapper']}>
         <div className={classes['card-container']}>
-          {renderTopNews(isLoading, items)}
+          {renderTopNews(isLoading, items, history)}
         </div>
       </div>
     </main>
