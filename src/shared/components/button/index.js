@@ -1,7 +1,10 @@
+import clsx from 'clsx';
+
 import classes from './style.module.scss';
+
 const buttonTypes = ['danger', 'success', 'info'];
 
-const Button = ({ type, clicked, children }) => {
+const Button = ({ type, clicked, children, classNames }) => {
   const typeLowerCase = type.toLowerCase();
 
   let buttonStyle = 'info';
@@ -12,8 +15,8 @@ const Button = ({ type, clicked, children }) => {
   return (
     <button
       type="button"
-      className={classes[buttonStyle]}
-      onClick={() => clicked}
+      className={clsx(classes[buttonStyle], classNames)}
+      onClick={clicked}
     >
       {children}
     </button>

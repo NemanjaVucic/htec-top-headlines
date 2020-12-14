@@ -2,7 +2,9 @@
 @import '../../../shared/scss/breakpoints.scss';
 
 .success,.danger,.info{
-    padding: 1% 5%;
+    font-size: smaller;
+    max-width: 40%;
+    padding:2% 5%;
     margin-top:5px;
     margin-left: 75%;
     color:$white;
@@ -30,8 +32,53 @@
 
 .danger{
     background-color: $red-danger; 
+    margin-left:0%
  }
 
 .info{
     background-color: $blue-info;
+ }
+
+ @media(min-width:$sm){
+    .success,.danger,.info{
+        font-size: small;
+        max-width: 35%;
+        padding:2% 4%;
+    }
+ }
+
+ 
+ @media(min-width:$md){
+    .success,.danger,.info{
+        font-size: medium;
+        max-width: 30%;
+        padding:1.2% 3%;
+    }
+ }
+
+ @media(min-width:$lg){
+    .success,.danger,.info{
+        font-size: medium;
+        max-width: 25%;
+        padding:1.1% 3%;
+        
+    }
+ }
+
+ @media(min-width:$xl){
+    .success,.danger,.info{
+        font-size: medium;
+        max-width: 23%;
+        padding:1% 3%;
+        
+    }
+ }
+
+ @media(min-width:$xxl){
+    .success,.danger,.info{
+        font-size: medium;
+        max-width: 20%;
+        padding:0.9% 3%;
+        
+    }
  }
