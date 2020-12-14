@@ -5,3 +5,9 @@
     color:$white;
     font-weight: 500;
 }
+
+.disabled{
+    background-color:$gray-500 ;
+    opacity: 0.5;
+    pointer-events: none;
+}
