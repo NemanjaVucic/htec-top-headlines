@@ -6,10 +6,10 @@ import Button from '../button';
 import PATHS from '../../constants/paths';
 
 const Card = ({ item, history }) => {
-  const { title, description, urlToImage } = item;
+  const { title, description, urlToImage, content } = item;
 
   const goToArticle = () => {
-    const q = qs.stringify(item);
+    const q = qs.stringify({ title, urlToImage, content });
 
     history.push({
       pathname: PATHS.article,
