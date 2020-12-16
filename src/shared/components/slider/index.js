@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import qs from 'query-string';
 
 import ExpandButton from '../expand-button';
 import Slide from './slide';
@@ -38,7 +39,7 @@ const Slider = ({
         <Link
           to={{
             pathname: PATHS.category,
-            search: `?categoryName=${categoryName}`,
+            search: qs.stringify({ categoryName }),
           }}
           className={classes.link}
         >
