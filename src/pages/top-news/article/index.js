@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import classes from './style.module.scss';
 import Button from '../../../shared/components/button';
-import PATHS from '../../../shared/constants/paths';
 
 const Article = ({ location, history, isSideNavVisible }) => {
   const cssArticle = clsx([
@@ -27,11 +26,7 @@ const Article = ({ location, history, isSideNavVisible }) => {
         <div className="flex-auto py-2 text-md text-gray-400 capitalize">
           {article.content}
         </div>
-        <Button
-          className=""
-          type="danger"
-          clicked={() => history.push(PATHS.topNews)}
-        >
+        <Button className="" type="danger" clicked={() => history.goBack()}>
           Back to list
         </Button>
       </div>

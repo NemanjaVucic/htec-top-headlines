@@ -10,17 +10,19 @@ const TopNews = ({ language, ...rest }) => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(async () => {
-    setIsLoading(true);
-    try {
-      const res = await axios.get(
-        `${API_BASE_URL}?country=${language.toLowerCase()}`,
-      );
-      setIsLoading(false);
-      setNews(res.data?.articles);
-    } catch (err) {
-      setIsLoading(false);
-    }
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(
+          `${API_BASE_URL}?country=${language.toLowerCase()}`,
+        );
+        setNews(res.data?.articles);
+        setIsLoading(false);
+      } catch (err) {
+        setIsLoading(false);
+      }
+    })();
   }, [language]);
 
   return (

@@ -42,7 +42,7 @@ const Navbar = ({
     if (isMenuDisplayed) {
       onSetMenuToFalse();
     }
-  }, [isMenuDisplayed]);
+  }, [isMenuDisplayed, onSetMenuToFalse]);
 
   return (
     <header className={headerClasses}>
