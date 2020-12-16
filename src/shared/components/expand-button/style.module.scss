@@ -1,0 +1,17 @@
+$buttonWidth:30px;
+
+.expand-button{
+    width:$buttonWidth;
+    padding: 2px 4px;
+    height:30px ;
+    transition: all 1s;
+    transition-timing-function: ease-out;
+    background-color: rgb(158, 243, 215);
+    border-radius: 2px;
+    transform: rotate(0);
+    margin-right: calc(50% - #{$buttonWidth});
+
+    &:focus{
+        outline: none;
+    }
+}
