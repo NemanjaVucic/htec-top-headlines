@@ -1,4 +1,5 @@
 @import '../../../shared/scss/colors.scss';
+@import '../../../shared/scss/breakpoints.scss';
 
 .slider-container{
     display: grid;
@@ -91,4 +92,39 @@
 .slider-container-just-header{
     grid-template-columns: 1fr;
     grid-template-rows: 40px;
+}
+
+@media(max-width:$sm){
+    .slider-container{
+        grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+        grid-template-rows: 40px 200px 40px;
+        padding: 5px 0;
+
+        .header{
+            grid-column: 1/3;
+        }
+
+        .slider{
+            grid-column: 1/3;
+            grid-row: 2;
+            margin: 2px 0;
+        }
+
+        .button-left{
+            grid-column: 1/2 ;
+            grid-row: 3;
+        }
+
+        .button-right{
+            grid-column:  2/3;
+            grid-row: 3;
+        }
+    }
+    .slider-container-just-header{
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px;
+    }
+    .hide-element{
+        display: none;
+    }
 }

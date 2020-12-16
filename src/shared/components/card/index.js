@@ -46,7 +46,7 @@ const Card = ({ item, history }) => {
       >
         {description}
       </div>
-      <Button type="info" clicked={goToArticle}>
+      <Button type="info" suffix={'>'} clicked={goToArticle}>
         More
       </Button>
     </div>
