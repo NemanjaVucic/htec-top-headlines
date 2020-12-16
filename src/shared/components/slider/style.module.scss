@@ -1,0 +1,94 @@
+@import '../../../shared/scss/colors.scss';
+
+.slider-container{
+    display: grid;
+    grid-template-columns:25px auto 25px;
+    grid-template-rows: 40px 200px;
+    margin-top: 30px;    
+    padding: 10px;
+    background-color: rgba(221, 238, 233,0.3);
+    border-radius: 25px;
+
+    .button-left,.button-right{
+        grid-row: 2;
+        font-size: large;
+        font-weight: 600;
+        background-color: $gray-100;
+        border-radius: 10px;
+        margin-top: 5px;
+        background: rgb(191,218,187);
+        background: radial-gradient(circle, rgba(191,218,187,0.4962359943977591) 0%, rgba(16,185,129,0.32816876750700286) 15%, rgba(16,185,129,0.6951155462184874) 85%, rgba(191,218,187,0.5046393557422969) 100%);
+       
+        &:hover{
+            background: rgb(191,230,187);
+            background: radial-gradient(circle, rgba(191,230,187,0.5) 0%, rgba(16,190,129,0.33) 15%, rgba(16,190,129,1) 85%, rgba(191,230,187,1) 100%);
+        }
+
+        &:active{
+            color:white;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .button-left{
+        grid-column: 1;
+    }
+
+    .button-right{
+        grid-column: 3;
+    }
+
+    .slider{
+        grid-column: 2/3;
+        grid-row: 2;
+        background-color: white;
+        border-bottom:gray 1px solid;
+        margin: 5px 10px 0 10px;
+        max-width:100%;
+        display:flex;
+        overflow: hidden;
+    }
+
+    .header{
+        background-color: white;
+        border-bottom:#1289A7 1px solid;
+        border-top:#1289A7 1px solid;
+        grid-column:1/4;
+        grid-row: 1;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+
+        .link{
+            background-color: #1289A7;
+            padding: 2px 12px;
+            border-radius: 20px;
+            color:white;
+
+            &:hover{
+                background-color: rgb(221, 238, 240);
+                color:#46504c;
+            }
+
+            &:active{
+                color:white;
+                background-color: #1289A7;
+            }
+        }
+        
+    }
+}
+
+.hide-element{
+    display: none;
+}
+
+.slider-container-just-header{
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px;
+}

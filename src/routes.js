@@ -1,7 +1,8 @@
 import TopNews from './pages/top-news';
-import Categories from './pages/categories';
-import Search from './pages/search';
 import Article from './pages/top-news/article';
+import Categories from './pages/categories';
+import Category from './pages/categories/category';
+import Search from './pages/search';
 import PATHS from './shared/constants/paths';
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: PATHS.categories,
     exact: true,
     component: Categories,
+  },
+  {
+    path: PATHS.category,
+    exact: true,
+    component: Category,
   },
   {
     path: PATHS.search,

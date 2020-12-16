@@ -11,14 +11,16 @@ const Search = ({ language, ...rest }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [term, setTerm] = useState('');
 
-  useEffect(async () => {
+  useEffect(() => {
     setIsLoading(true);
     try {
-      const res = await axios.get(
-        `${API_BASE_URL}?country=${language.toLowerCase()}&q=${term}`,
-      );
-      setIsLoading(false);
-      setSearchResults(res.data?.articles);
+      (async () => {
+        const res = await axios.get(
+          `${API_BASE_URL}?country=${language.toLowerCase()}&q=${term}`,
+        );
+        setSearchResults(res.data?.articles);
+        setIsLoading(false);
+      })();
     } catch (err) {
       setIsLoading(false);
     }
