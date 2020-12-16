@@ -15,18 +15,23 @@ const Article = ({ location, history, isSideNavVisible }) => {
 
   return (
     <div className={cssArticle}>
-      <div className="w-full flex flex-col justify-evenly">
-        <h2 className="flex-auto pb-3 text-gray-700 font-bold text-xl text-center">
+      <div className="w-full flex flex-col justify-between h-full p-5">
+        <h2 className="pb-3 text-gray-700 font-bold text-xl text-center">
           {article.title}
         </h2>
         <img
           src={article.urlToImage}
-          className="flex-auto py-2 max-h-60 2xl:max-h-72 object-cover w-full rounded-3xl"
+          className="flex-1 py-2 h-2/4 object-cover w-full rounded-3xl"
         />
-        <div className="flex-auto py-2 text-md text-gray-400 capitalize">
+        <div className="py-2 text-md text-gray-400 capitalize">
           {article.content}
         </div>
-        <Button className="" type="danger" clicked={() => history.goBack()}>
+        <Button
+          className=""
+          prefix={'<'}
+          type="danger"
+          clicked={() => history.goBack()}
+        >
           Back to list
         </Button>
       </div>
