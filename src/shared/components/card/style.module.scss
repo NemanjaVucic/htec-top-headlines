@@ -1,6 +1,7 @@
 .container{
     display: grid;
     grid-template-rows: auto auto auto 45px; 
+    grid-template-columns: minmax(0,1fr);
     padding: 3%;
 
     transition: all .2s ease-in-out;

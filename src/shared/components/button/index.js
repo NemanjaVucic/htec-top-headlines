@@ -18,9 +18,9 @@ const Button = ({ type, clicked, children, prefix, suffix, classNames }) => {
       className={clsx(classes[buttonStyle], classNames)}
       onClick={clicked}
     >
-      <p className="mr-2">{prefix}</p>
+      <p className="mr-1 sm:mr-2 ">{prefix}</p>
       {children}
-      <p className="ml-2">{suffix}</p>
+      <p className="ml-1 sm:ml-2">{suffix}</p>
     </button>
   );
 };
